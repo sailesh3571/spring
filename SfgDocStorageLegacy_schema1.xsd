@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://standard.com/SfgDocStorageLegacy/Service" elementFormDefault="qualified" version="1.0" targetNamespace="http://standard.com/SfgDocStorageLegacy/Service">
+
+  <xs:element name="AddDocument" type="tns:AddDocument"></xs:element>
+
+  <xs:element name="AddDocumentResponse" type="tns:AddDocumentResponse"></xs:element>
+
+  <xs:element name="DetermineDocType" type="tns:DetermineDocType"></xs:element>
+
+  <xs:element name="DetermineDocTypeResponse" type="tns:DetermineDocTypeResponse"></xs:element>
+
+  <xs:element name="FileNetInternalDateFormat" type="tns:FileNetInternalDateFormat"></xs:element>
+
+  <xs:element name="FileNetInternalDateFormatResponse" type="tns:FileNetInternalDateFormatResponse"></xs:element>
+
+  <xs:element name="Logoff" type="tns:Logoff"></xs:element>
+
+  <xs:element name="LogoffResponse" type="tns:LogoffResponse"></xs:element>
+
+  <xs:element name="Logon" type="tns:Logon"></xs:element>
+
+  <xs:element name="LogonResponse" type="tns:LogonResponse"></xs:element>
+
+  <xs:element name="RetrieveDocument" type="tns:RetrieveDocument"></xs:element>
+
+  <xs:element name="RetrieveDocumentResponse" type="tns:RetrieveDocumentResponse"></xs:element>
+
+  <xs:element name="Search" type="tns:Search"></xs:element>
+
+  <xs:element name="SearchResponse" type="tns:SearchResponse"></xs:element>
+
+  <xs:element name="UpdateDocument" type="tns:UpdateDocument"></xs:element>
+
+  <xs:element name="UpdateDocumentResponse" type="tns:UpdateDocumentResponse"></xs:element>
+
+  <xs:element name="base64Binary" type="xs:base64Binary"></xs:element>
+
+  <xs:element name="string" type="xs:string"></xs:element>
+
+  <xs:complexType name="RetrieveDocumentResponse">
+    <xs:sequence>
+      <xs:element name="RetrieveDocumentResult" type="xs:base64Binary" nillable="true" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SearchResponse">
+    <xs:sequence>
+      <xs:element name="SearchResult" type="tns:SearchResultType" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SearchResultType">
+    <xs:sequence>
+      <xs:element name="SearchResults" type="tns:SearchResultsType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SearchResultsType">
+    <xs:sequence>
+      <xs:element name="NameValues" type="tns:NameValue" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="NameValue">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="value" type="xs:string" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RetrieveDocument">
+    <xs:sequence>
+      <xs:element name="sSecurityToken" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="sDocumentID" type="xs:string" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FileNetInternalDateFormatResponse">
+    <xs:sequence>
+      <xs:element name="FileNetInternalDateFormatResult" type="xs:string" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FileNetInternalDateFormat">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LogonResponse">
+    <xs:sequence>
+      <xs:element name="LogonResult" type="xs:string" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DetermineDocTypeResponse">
+    <xs:sequence>
+      <xs:element name="DetermineDocTypeResult" type="xs:string" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Logoff">
+    <xs:sequence>
+      <xs:element name="sSecurityToken" type="xs:string" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AddDocument">
+    <xs:sequence>
+      <xs:element name="UserId" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="Password" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="Document" type="tns:DocumentType" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DocumentType">
+    <xs:sequence>
+      <xs:element name="Property" type="tns:PropertyType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+      <xs:element name="Content" type="tns:ContentType" minOccurs="0" maxOccurs="unbounded"></xs:element>
+      <xs:element name="DocumentClass" type="xs:string"></xs:element>
+      <xs:element name="DocumentId" type="xs:string"></xs:element>
+      <xs:element name="ObjectStoreName" type="xs:string"></xs:element>
+      <xs:element name="FolderPath" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PropertyType">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string"></xs:element>
+      <xs:element name="Value" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ContentType">
+    <xs:sequence>
+      <xs:element name="MimeType" type="xs:string"></xs:element>
+      <xs:element xmlns:ns1="http://www.w3.org/2005/05/xmlmime" name="ContentStream" ns1:expectedContentTypes="application/octet-stream" type="xs:base64Binary"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UpdateDocumentResponse">
+    <xs:sequence>
+      <xs:element name="UpdateDocumentResult" type="xs:string" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UpdateDocument">
+    <xs:sequence>
+      <xs:element name="UserId" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="Password" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="Document" type="tns:DocumentType" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LogoffResponse">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Search">
+    <xs:sequence>
+      <xs:element name="sSecurityToken" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="sDocumentAttributes" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="sWhereClause" type="xs:string" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DetermineDocType">
+    <xs:sequence>
+      <xs:element name="sSecurityToken" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="sDocumentID" type="xs:string" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AddDocumentResponse">
+    <xs:sequence>
+      <xs:element name="AddDocumentResult" type="xs:string" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Logon">
+    <xs:sequence>
+      <xs:element name="sLibraryName" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="sUserName" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="sPassword" type="xs:string" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

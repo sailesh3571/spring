@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="SfgDocStorageLegacy" targetNamespace="http://standard.com/SfgDocStorageLegacy/Service" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://standard.com/SfgDocStorageLegacy/Service" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://standard.com/SfgDocStorageLegacy/Service" schemaLocation="SfgDocStorageLegacy_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="Logoff">
+    <part name="parameters" element="tns:Logoff">
+    </part>
+  </message>
+  <message name="FileNetInternalDateFormat">
+    <part name="parameters" element="tns:FileNetInternalDateFormat">
+    </part>
+  </message>
+  <message name="DetermineDocTypeResponse">
+    <part name="parameters" element="tns:DetermineDocTypeResponse">
+    </part>
+  </message>
+  <message name="LogonResponse">
+    <part name="parameters" element="tns:LogonResponse">
+    </part>
+  </message>
+  <message name="Logon">
+    <part name="parameters" element="tns:Logon">
+    </part>
+  </message>
+  <message name="RetrieveDocument">
+    <part name="parameters" element="tns:RetrieveDocument">
+    </part>
+  </message>
+  <message name="AddDocumentResponse">
+    <part name="parameters" element="tns:AddDocumentResponse">
+    </part>
+  </message>
+  <message name="AddDocument">
+    <part name="parameters" element="tns:AddDocument">
+    </part>
+  </message>
+  <message name="Search">
+    <part name="parameters" element="tns:Search">
+    </part>
+  </message>
+  <message name="UpdateDocumentResponse">
+    <part name="parameters" element="tns:UpdateDocumentResponse">
+    </part>
+  </message>
+  <message name="UpdateDocument">
+    <part name="parameters" element="tns:UpdateDocument">
+    </part>
+  </message>
+  <message name="DetermineDocType">
+    <part name="parameters" element="tns:DetermineDocType">
+    </part>
+  </message>
+  <message name="LogoffResponse">
+    <part name="parameters" element="tns:LogoffResponse">
+    </part>
+  </message>
+  <message name="SearchResponse">
+    <part name="parameters" element="tns:SearchResponse">
+    </part>
+  </message>
+  <message name="FileNetInternalDateFormatResponse">
+    <part name="parameters" element="tns:FileNetInternalDateFormatResponse">
+    </part>
+  </message>
+  <message name="RetrieveDocumentResponse">
+    <part name="parameters" element="tns:RetrieveDocumentResponse">
+    </part>
+  </message>
+  <portType name="SfgDocStorageLegacySoap">
+    <operation name="Logon">
+      <input message="tns:Logon">
+    </input>
+      <output message="tns:LogonResponse">
+    </output>
+    </operation>
+    <operation name="Logoff">
+      <input message="tns:Logoff">
+    </input>
+      <output message="tns:LogoffResponse">
+    </output>
+    </operation>
+    <operation name="Search">
+      <input message="tns:Search">
+    </input>
+      <output message="tns:SearchResponse">
+    </output>
+    </operation>
+    <operation name="FileNetInternalDateFormat">
+      <input message="tns:FileNetInternalDateFormat">
+    </input>
+      <output message="tns:FileNetInternalDateFormatResponse">
+    </output>
+    </operation>
+    <operation name="RetrieveDocument">
+      <input message="tns:RetrieveDocument">
+    </input>
+      <output message="tns:RetrieveDocumentResponse">
+    </output>
+    </operation>
+    <operation name="DetermineDocType">
+      <input message="tns:DetermineDocType">
+    </input>
+      <output message="tns:DetermineDocTypeResponse">
+    </output>
+    </operation>
+    <operation name="UpdateDocument">
+      <input message="tns:UpdateDocument">
+    </input>
+      <output message="tns:UpdateDocumentResponse">
+    </output>
+    </operation>
+    <operation name="AddDocument">
+      <input message="tns:AddDocument">
+    </input>
+      <output message="tns:AddDocumentResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="SfgDocStorageLegacySoapBinding" type="tns:SfgDocStorageLegacySoap">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="Logon">
+      <soap:operation soapAction="http://standard.com/SfgDocStorageLegacy/Logon"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="Logoff">
+      <soap:operation soapAction="http://standard.com/SfgDocStorageLegacy/Logoff"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="Search">
+      <soap:operation soapAction="http://standard.com/SfgDocStorageLegacy/Search"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="FileNetInternalDateFormat">
+      <soap:operation soapAction="http://standard.com/SfgDocStorageLegacy/FileNetInternalDateFormat"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RetrieveDocument">
+      <soap:operation soapAction="http://standard.com/SfgDocStorageLegacy/RetrieveDocument"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="DetermineDocType">
+      <soap:operation soapAction="http://standard.com/SfgDocStorageLegacy/DetermineDocType"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="UpdateDocument">
+      <soap:operation soapAction="http://standard.com/SfgDocStorageLegacy/UpdateDocument"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="AddDocument">
+      <soap:operation soapAction="http://standard.com/SfgDocStorageLegacy/AddDocument"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SfgDocStorageLegacy">
+    <port name="SfgDocStorageLegacySoap" binding="tns:SfgDocStorageLegacySoapBinding">
+      <soap:address location="http://fwebsys.standard.com:80/SfgDocStorageLegacy/SfgDocStorageLegacy"/>
+    </port>
+  </service>
+</definitions>
